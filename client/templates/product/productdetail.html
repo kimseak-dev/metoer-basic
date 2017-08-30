@@ -1,0 +1,53 @@
+<template name="productdetail">
+<div class= "container">
+  <div class="row">
+      <div class="col-md-8 col-md-offset-1">
+          <h1 class="page-header">{{truncate product.name 30}}
+              <span class="label label-warning">{{product.category.name}}</span>
+          </h1>
+      </div>
+  </div>
+    <div class="col-md-8 col-md-offset-1">
+        <div class="thumbnail">
+            <img class="img-responsive" src="{{product.img.image}}" alt=""/>
+             <div class="caption-full">
+               <h3 class="pull-right" style="color:red">$ {{product.price}}</h3>
+               <h3>{{truncate product.name 25}}</h3>
+
+               <h4><u>Description</u></h4>
+                <p>{{product.description}}</p>
+             </div>
+            <div class="well">
+              <div class="send-wrap ">
+                  <textarea class="form-control " rows="2" placeholder="Write a comment..." id="comment"></textarea>
+              </div>
+              {{#if currentUser}}
+              <div class="text-right">
+                <a class="btn btn-success send-message">Post</a>
+              </div>
+              {{else}}
+              <div class="text-right">
+                Go to &nbsp;<a href="http://localhost:3000/signin">Signup</a> to comment
+              </div>
+              {{/if}}
+              <hr>
+              <div style=" height: 400px; overflow: scroll;">
+              {{#each comments}}
+               <div class="row">
+                    <div class="col-md-2">
+                       <img class="img-responsive" src="{{user.profile.avatar}}" alt=""/>
+                       <span><b>{{user.profile.firstname}} &nbsp;{{user.profile.firstname}} </b></span>
+                    </div>
+                    <div class="col-md-10">
+                       <span class="pull-right" style="color:grey"> {{formatdate (createdAt)}}</span><br/>
+                      <p>{{usercomment}}</p>
+                    </div>
+               </div>
+               <hr/>
+                {{/each}}
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+</template>

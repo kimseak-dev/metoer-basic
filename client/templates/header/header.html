@@ -1,0 +1,63 @@
+<template name="header">
+    <!-- Navigation -->
+    <nav class="navbar  navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/type/rent">Rent</a>
+                    </li>
+                    <li>
+                        <a href="/type/buy">Buy</a>
+                    </li>
+                    <li>
+                        <a href="/type/sell">Sell</a>
+                    </li>
+
+                    {{#if currentUser}}
+                    <li>
+                        <a href="/profile">Profile</a>
+                    </li>
+                    {{/if}}
+                    {{#if isInRole 'admin'}}
+                    <li>
+                        <a href="/admin/product">Admin Product</a>
+                    </li>
+                    <li>
+                        <a href="/admin/category">Admin Category</a>
+                    </li>
+                    {{/if}}
+                </ul>
+                <form class="navbar-form navbar-right">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="search location ..."/>
+                  </div>
+                  <button type="submit" class="btn btn-default">Search</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    {{#if currentUser}}
+                    <li>
+                      <a href="http://localhost:3000/signout">Sign Out {{currentUser.profile.firstname}}</a>
+                    </li>
+                    <li>
+                        <img src="{{currentUser.profile.avatar}}" alt="" style="width:30px; height:30px; margin-top:10px;" class="img-circle"/>
+                    </li>
+                    {{else}}
+                    <li><a href="signup">Register</a></li>
+                    <li><a href="http://localhost:3000/signin">Sign In</a></li>
+                    {{/if}}
+                </ul>
+
+            </div>
+
+
+        </div>
+        <!-- /.container -->
+    </nav>
+</template>

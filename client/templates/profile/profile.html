@@ -1,0 +1,42 @@
+<template name="profile">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form class="register-form">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="plain">Profile Setting</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="thumbnail">
+                            <img src="{{currentUser.profile.avatar}}" alt="" mg-circle avatar-upload/>
+                            <input type="file" accept=".gif,.jpg,.png" class="myFileInput" id="avatar"/>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label class="plain">Email</label>
+                            <input type="text" class="form-control plain" value="{{currentUser.profile.firstname}}" disabled/>
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <label class="plain">Last Name</label>
+                            <input type="text" class="form-control plain" value ="{{currentUser.profile.lastname}}" disabled/>
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <label class="plain">Email</label>
+                            <input type="text" class="form-control plain" id="email" value="{{currentUser.profile.email}}" disabled/>
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <label class="plain">Do you want to be admin?</label>
+                            <input type="checkbox" id="admin" value="admin">Yes
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <a href="/" class="btn btn-info plain">Next</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</template>

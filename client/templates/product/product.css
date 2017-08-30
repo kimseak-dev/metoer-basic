@@ -1,0 +1,10 @@
+.send-wrap
+{
+    border-top: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.comment{
+    margin-top: 10px;
+}

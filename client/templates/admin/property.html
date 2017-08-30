@@ -1,0 +1,94 @@
+<template name="propertyAdmin">
+    <div class="row">
+        <div class="col-md-6">
+            <form id="productForm">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="plain huge">Post Property</h3>
+                    </div>
+                    <div class="panel-body">
+                        <h4><span class="label label-info">Property's Information</span></h4><hr/>
+                        <!-- Title -->
+                        <div class="form-group">
+                            <label class="control-label">Title</label>
+                            <input id="property-title" type="text" class="form-control input-sm"/>
+                        </div>
+                        <!-- Company -->
+                        <div class="form-group">
+                            <label class="control-label">Company</label>
+                            <input id="property-company" type="text" class="form-control input-sm"/>
+                        </div>
+                        <!-- Description -->
+                        <div class="form-group">
+                            <label class="control-label">Description</label>
+                            <textarea id="property-description" class="form-control"></textarea>
+                        </div>
+                        <!-- Price -->
+                        <div class="form-group">
+                            <label class="control-label">Price($)</label>
+                            <input id="property-price" type="text" class="form-control input-sm"/>
+                        </div>
+                        <!-- Image -->
+                        <div class="form-group  ">
+                            <label class="control-label">Image</label>
+                            <input type="file" accept=".gif,.jpg,.png" class="myFileInput" id="avatar" />
+                        </div>
+                        <h4><span class="label label-info">Property's Location</span></h4><hr/>
+                        <!--City/Province-->
+                        <div class="form-group">
+                            <label class="control-label">City or Province</label>
+                            <input id="city" type="text" class="form-control input-sm"/>
+                        </div>
+                        <!--Districk-->
+                        <div class="form-group">
+                            <label class="control-label">District</label>
+                            <input id="district" type="text" class="form-control input-sm"/>
+                        </div>
+                        <!--Commune-->
+                        <div class="form-group">
+                            <label class="control-label">Commune</label>
+                            <input id="commune" type="text" class="form-control input-sm"/>
+                        </div>
+                        <h4><span class="label label-default">Property's Map</span></h4><hr/><br/>
+                        <div>
+                          {{>map}}
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button type="submit" class="btn btn-info addProperty"> <i class="fa fa-database addCategory"></i>POST</button>
+                        <button type="button" class="btn btn-default my-hide">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-striped table-bordered table-responsive table-hover">
+                <thead>
+                <tr class="info">
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>City</th>
+                    <th>For</th>
+                    <th>Remove</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each property}}
+                <tr id="{{_id}}" class="product-edit">
+                    <td>{{title}}</td>
+                    <td>${{price}}</td>
+                    <td>{{location.city}}</td>
+                    <td>Rent</td>
+                    <td style=" display: none;">{{img}}</td>
+                    <td><i class="fa fa-trash alert-danger removeProduct"></i></td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="5">No Products Found !</td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>

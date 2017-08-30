@@ -1,0 +1,98 @@
+<template name="propertydetail">
+  <div class="container">
+
+    <div class="row">
+          <div class="col-lg-12">
+              <h1 class="page-header">Portfolio Item
+                  <small>Item Subheading</small>
+              </h1>
+          </div>
+    </div>
+
+    <div class="row">
+      
+       <div class="col-md-8">
+         <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+       </div>
+
+       <div class="col-md-4">
+         <h3>Property Description</h3>
+         <p>
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit
+         </p>
+         <h3>Location Infomation</h3>
+         <ul>
+           <li>City/Province: Pnhom Penh</li>
+           <li>City/Province: Pnhom Penh</li>
+           <li>City/Province: Pnhom Penh</li>
+           <li>City/Province: Pnhom Penh</li>
+           <li>City/Province: Pnhom Penh</li>
+         </ul>
+         <h3>Contact Infomation</h3>
+         <ul>
+           <li>Address: Pnhom Penh</li>
+           <li>Email: kimseakphon@2ntkh.com </li>
+           <li>Phone: 010 23 24 25 </li>
+         </ul>
+       </div>
+       <div class="row">
+         <div class="col-lg-12">
+             <h3 class="page-header">More Images</h3>
+         </div>
+         <div class="col-sm-3 col-xs-6">
+            <a href="#">
+               <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+            </a>
+         </div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-lg-12">
+          <h3 class="page-header">Map</h3>
+        </div>
+        <div class="col-lg-12">
+          {{>mapdetail}}
+        </div>
+      </div>
+      <hr/>
+       <!-- Comments Form -->
+      <hr/>
+      <div class="row ">
+         <div class="col-md-12 well">
+           <h4>Leave a Comment:</h4>
+           <form role="form">
+             <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+             </div>
+             <button type="submit" class="btn btn-primary">Submit</button>
+           </form>
+        </div>
+      </div>
+
+      <hr/>
+      <div class="media">
+        <a class="pull-left" href="#">
+           <img class="media-object" src="http://placehold.it/64x64" alt="">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading">Start Bootstrap
+            <small>August 25, 2014 at 9:30 PM</small>
+          </h4>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+            scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum
+            in vulputate at, tempus viverra turpis. Fusce condimen
+          <div class="media">
+             <a class="pull-left" href="#">
+                 <img class="media-object" src="http://placehold.it/64x64" alt="">
+             </a>
+          </div>
+        <hr/>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
